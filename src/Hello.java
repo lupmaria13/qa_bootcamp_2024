@@ -54,7 +54,7 @@ public class Hello {
         for(String arg : args) {
             System.out.println(arg);
         }
-
+/*
         for (int i=2; i<=1000000;i++) {
             boolean isPrime = true;
             for (int j=2; j <= i/2 ; j++) {
@@ -67,6 +67,8 @@ public class Hello {
                 System.out.println("Number " + i + " is prime.");
             }
         }
+
+ */
 
     }
 
