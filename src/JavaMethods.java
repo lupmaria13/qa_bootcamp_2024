@@ -13,13 +13,93 @@ public class JavaMethods {
 //        System.out.println("----------------------------------");
 //        drawShapeCorners(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 
-        drawFullShape(Integer.parseInt(args[0]));
+//        drawFullShape(Integer.parseInt(args[0]));
 
 //        addNumbers(1, 100);
 //        addNumbers(500f, 600f);
 //        addNumbers(105.6, 88.45);
 
+        Shape myShape = new Shape();
+        myShape.draw();
+        myShape.erase();
+        myShape.setColor("Green");
+        System.out.println("The shape has color: " + myShape.getColor());
+
+        Rectangle myRectangle = new Rectangle(4, 5);
+        myRectangle.draw();
+
+        Square mySquare = new Square(12);
+        mySquare.draw();
+        System.out.println("length " + mySquare.getLength());
+        System.out.println("Diagonal is " + mySquare.getDiagonal());
+
+        Shape myShape1 = new Square();
+        Shape myShape2 = new Triangle();
+        Shape myShape3 = new Rectangle();
+        Shape myShape4 = new Circle();
+
+        myShape1.draw();
+        myShape2.draw();
+        myShape3.draw();
+        myShape4.draw();
+
+        Person teacher1 = new Teacher("UPB");
+        teacher1.setName("Alex");
+        teacher1.setSurname("G");
+        teacher1.eat();
+        ((Teacher)teacher1).teachCourse();
+
+        Person student1 = new Student();
+        student1.setName("Andrei");
+        student1.setSurname("Studentila");
+        student1.eat();
+
+        if(student1.getName() == null) {
+            throw new IllegalArgumentException("No name for the student");
+        }
+
+//        System.out.println(5/0);
+//        System.out.println("After exception");
+        try {
+            myExceptionMethod();
+        }
+        catch (IllegalThreadStateException ex) {
+            System.out.println("Oooops an exception " + ex.getMessage());
+        }
+        catch (IllegalArgumentException | MyException ex) {
+            System.out.println(ex.getMessage());
+        }
+        catch (Exception ex) {
+            System.out.println("Generic exception");
+        }
+
+        try {
+            int argument = Integer.parseInt(args[0]);
+        }
+        catch (ArrayIndexOutOfBoundsException ex) {
+            System.out.println("No params provided");
+        }
+        catch (NumberFormatException nex) {
+            System.out.println("Input is not an integer");
+        }
+        catch(Exception ex) {
+            System.out.println("Generic exception");
+        }
+        finally {
+            System.out.println("This line will always execute");
+        }
+
     }
+
+    public static void myExceptionMethod() throws IllegalArgumentException, MyException {
+        Student s1 = new Student();
+
+        if (s1.getName() == null) {
+//            throw new IllegalArgumentException("Exception: No name for the student");
+            throw new MyException("Exception: No name for the student");
+        }
+    }
+
 
     private static void addNumbers(int i, int j) {
         System.out.println("adding 2 int numbers with sum " + (i+j));
