@@ -48,16 +48,22 @@ public class CollectionsExercises {
 
         HashSet<String> hs = new HashSet<>();
         hs.add("alex");
-        hs.add("alex");
+        hs.add("maria");
+        hs.add("ionela");
+        hs.add("mihai");
+
         System.out.println(hs.size());
+        for (String s : hs) {
+            System.out.println(s);
+        }
 
         HashMap<Integer, String> myHashMap = new HashMap<>();
         myHashMap.put(1, "alex");
         myHashMap.put(1, "andreea");
-        System.out.println(myHashMap.get(1));
+//        System.out.println(myHashMap.get(1));
 
         for(Integer k : myHashMap.keySet()) {
-            System.out.println(myHashMap.get(k));
+//            System.out.println(myHashMap.get(k));
         }
 
         Queue<String> breadQueue = new PriorityQueue<>();

@@ -9,6 +9,8 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <junitVersion>5.11.2</junitVersion>
+        <lombokVersion>1.18.34</lombokVersion>
     </properties>
 
     <dependencies>
@@ -16,16 +18,17 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.11.2</version>
+            <version>${junitVersion}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.34</version>
+            <version>${lombokVersion}</version>
             <scope>provided</scope>
         </dependency>
+
 
     </dependencies>
 
