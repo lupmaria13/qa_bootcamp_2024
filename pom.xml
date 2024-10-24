@@ -12,8 +12,8 @@
         <junitVersion>5.11.2</junitVersion>
         <lombokVersion>1.18.34</lombokVersion>
         <testngVersion>7.10.2</testngVersion>
-        <surefireVersion>3.5.1</surefireVersion>
-        <extentVersion>5.1.2</extentVersion>
+        <surefireVersion>2.2.11</surefireVersion>
+        <xtentVersion>5.1.2</xtentVersion>
         <suiteFile>testSuites\runSuites.xml</suiteFile>
     </properties>
 
