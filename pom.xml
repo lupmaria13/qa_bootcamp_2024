@@ -12,8 +12,9 @@
         <junitVersion>5.11.2</junitVersion>
         <lombokVersion>1.18.34</lombokVersion>
         <testngVersion>7.10.2</testngVersion>
-        <surefireVersion>2.2.11</surefireVersion>
+        <surefireVersion>3.5.1</surefireVersion>
         <xtentVersion>5.1.2</xtentVersion>
+        <seleniumVersion>4.25.0</seleniumVersion>
         <suiteFile>testSuites\runSuites.xml</suiteFile>
     </properties>
 
@@ -49,7 +50,13 @@
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
-            <version>${extentVersion}</version>
+            <version>${xtentVersion}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${seleniumVersion}</version>
         </dependency>
 
 
