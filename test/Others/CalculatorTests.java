@@ -1,3 +1,5 @@
+package Others;
+
 import org.junit.jupiter.api.*;
 
 public class CalculatorTests {

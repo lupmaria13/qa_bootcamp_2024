@@ -1,26 +1,22 @@
-package juiceShop;
+package juiceShop.tests;
 
-import frameworkUtils.Selectors;
-import frameworkUtils.Utils;
+import juiceShop.frameworkUtils.Selectors;
+import juiceShop.frameworkUtils.Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class LoginTests {
+public class RegisterTest {
+
 
     static final String baseUrl = Utils.getConfigProperty("baseUrl");
 
@@ -32,13 +28,6 @@ public class LoginTests {
 //        System.setProperty("webdriver.chrome.driver", "C:\\Users\\myuser\\Downloads\\chromedirver.exe");
 
         driver = Utils.getDriver();
-    }
-
-    @Test
-    public void mainPage() {
-        driver.get(baseUrl + "/#/");
-        WebElement pageText = driver.findElement(By.cssSelector(Selectors.ALL_PRODUCTS_SELECTOR));
-        Assert.assertEquals(pageText.getText(), "All Products");
     }
 
     @DataProvider(name = "RegistrationDataProvider")
@@ -91,39 +80,6 @@ public class LoginTests {
 
         WebElement submitButton = driver.findElement(By.id(Selectors.REGISTER_SUBMIT_BUTTON));
         submitButton.click();
-
-    }
-
-    @Test
-    public void login01(){
-
-        driver.get(baseUrl + "/#/login");
-//        WebElement dismissModalElement = driver.findElement(By.cssSelector("#mat-dialog-0 > app-welcome-banner > div > div:nth-child(3) > button.mat-focus-indicator.close-dialog.mat-raised-button.mat-button-base.mat-primary.ng-star-inserted > span.mat-button-wrapper > mat-icon"));
-
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        WebElement dismissModalElement = wait.until(
-//                ExpectedConditions.elementToBeClickable(By.cssSelector("#mat-dialog-0 > app-welcome-banner > div > div:nth-child(3) > button.mat-focus-indicator.close-dialog.mat-raised-button.mat-button-base.mat-primary.ng-star-inserted > span.mat-button-wrapper > mat-icon")));
-        WebElement dismissModalElement = Utils.waitForElement(driver, 5,
-                By.cssSelector(Selectors.MODAL_OK_BUTTON)
-                );
-        dismissModalElement.click();
-
-        WebElement loginElement = driver.findElement(By.id(Selectors.USERNAME_ID));
-        loginElement.sendKeys("alex@alex.com");
-
-//        driver.findElement(By.id("email")).sendKeys("alex@alex.com");
-
-        WebElement passwordElement = driver.findElement(By.id(Selectors.PASSWORD_ID));
-        passwordElement.sendKeys("Abc123$");
-
-        WebElement submitButton = driver.findElement(By.id(Selectors.SUBMIT_ID));
-        submitButton.click();
-
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
 
     }
 
