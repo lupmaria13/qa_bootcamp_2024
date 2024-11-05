@@ -12,26 +12,7 @@ import org.testng.annotations.Test;
 import juiceShop.pages.LoginPage;
 import juiceShop.pages.LoginPagePF;
 
-public class LoginTest {
-
-    static final String baseUrl = Utils.getConfigProperty("baseUrl");
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void initDriver() {
-        // OLD version !! Do not use unless the server you are testing does not have internet
-//        System.setProperty("webdriver.chrome.driver", "C:\\Users\\myuser\\Downloads\\chromedirver.exe");
-
-        driver = Utils.getDriver();
-    }
-
-    @Test
-    public void mainPage() {
-        driver.get(baseUrl + "/#/");
-        WebElement pageText = driver.findElement(By.cssSelector(Selectors.ALL_PRODUCTS_SELECTOR));
-        Assert.assertEquals(pageText.getText(), "All Products");
-    }
+public class LoginTest extends BaseTest{
 
     @Test
     public void login01(){
@@ -49,16 +30,6 @@ public class LoginTest {
         // Best practice is to have the Asserts in tests
         Assert.assertEquals(lp.getLoginText(), lp.getStaticLoginText());
         lp.login("alex@alex.com", "Qwert123$");
-    }
-
-    @AfterMethod
-    public void closeBrowser() {
-        try {
-            driver.close();
-        }
-        catch (Exception ex) {
-            driver.quit();
-        }
     }
 
 }
